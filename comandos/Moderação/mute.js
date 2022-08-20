@@ -21,7 +21,7 @@ module.exports = {
     async execute(client, interaction) {
         const membro = interaction.options.getMember('membro')
         if(!membro) return interaction.reply({content: 'Este usuário não está no servidor.', ephemeral: true})
-        if(!membro.permissions.has(Discord.Permissions.FLAGS.MUTE_MEMBERS)) return interaction.reply({content: 'Você não tem permissão para executar este comando.', ephemeral: true})
+        if(!interaction.member.permissions.has(Discord.Permissions.FLAGS.KICK_MEMBERS)) return interaction.reply({content: 'Você não tem permissão para executar este comando.', ephemeral: true})
         if(membro.id == interaction.member.id) return interaction.reply({content: 'Você não pode se mutar.', ephemeral: true})
         if(membro.roles.highest.position >= interaction.guild.me.roles.highest.position) return interaction.reply({content: 'Eu não tenho permissão para mutar este usuário.', ephemeral: true})
         if(membro.roles.highest.position >= interaction.member.roles.highest.position) return interaction.reply({content: 'Você não tem permissão para mutar este usuário.', ephemeral: true})
@@ -42,7 +42,7 @@ module.exports = {
                 },
                 {
                     name: 'Membro mutado:',
-                    value: membro.id
+                    value: membro.user.toString()
                 },
                 {
                     name: 'Motivo:',
