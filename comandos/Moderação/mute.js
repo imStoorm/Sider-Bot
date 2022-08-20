@@ -41,7 +41,7 @@ module.exports = {
                     value: interaction.user.toString()
                 },
                 {
-                    name: 'Membro banido:',
+                    name: 'Membro mutado:',
                     value: membro.id
                 },
                 {
