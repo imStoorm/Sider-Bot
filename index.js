@@ -23,16 +23,16 @@ modules.forEach((x) => {
 });
 ;
 
-const clientID = "20fba8d6f47441c48dafb3d5cb52f0da";
-const clientSecret = "f6e9f1044a8241bf8c42aebc6700fad2"
+const clientID = "clientID";
+const clientSecret = "clientSecret"
 client.vulkava = new Vulkava({
   unresolvedSearchSource: 'youtube',
   nodes: [
     {
-      "hostname": "siderlava.discloud.app",
-      "port": 443,
+      "hostname": "hostname",
+      "port": port,
       "secure": true,
-      "password": "stormreidelas7"
+      "password": "password"
     }
   ],
   spotify: {
